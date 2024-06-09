@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, input, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body{
+  background-color: black;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#searchButton{
+  position: relative;
+  width: 105px;
+  height: 35px;
+  text-align: center;
+  padding-right: 0;
+  display: block;
+  margin-left: calc(100% - 90px);
+  padding-left: 22px;
+  font-size: 15px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+#searchButton:hover{
+  background-color: grey;
+  border-radius: 6px;
+}
+
+#searchButton:focus{
+  background-color: grey;
+  border: 1px solid darkgrey;
+  border-radius: 5px;
+}
+
+#searchButton:before{
+  content: "";
+  position: absolute;
+  left: calc(20% - 10px);
+  top: calc(50% - 7px);
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNS4yNSAwYTguMjUgOC4yNSAwIDAgMC02LjE4IDEzLjcyTDEgMjIuODhsMS4xMiAxbDguMDUtOS4xMkE4LjI1MSA4LjI1MSAwIDEgMCAxNS4yNS4wMXptMCAxNWE2Ljc1IDYuNzUgMCAxIDEgMC0xMy41YTYuNzUgNi43NSAwIDAgMSAwIDEzLjUiLz48L3N2Zz4=") no-repeat;
+  background-size: 15px 15px;
+  transform: scaleX(-1);
+  width: 15px;
+  height: 15px;
+}
+
+#container{
+  position:relative;
+  width:500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#dropdown{
+  position: absolute;
+  top: 35px;
+  margin-left: calc(100% - 260px);
+  width: 275px;
+  height: 400px;
+  border-radius: 10px;
+  border: 1px solid darkgrey;
+  overflow: hidden;
+}
+
+#searchContainer{
+  height: 45px;
+  width:100%;
+  display: flex;
+  border-bottom: 1px solid darkgrey;
+  background-color: black;
+}
+
+#searchContainer:before{
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0xNS4yNSAwYTguMjUgOC4yNSAwIDAgMC02LjE4IDEzLjcyTDEgMjIuODhsMS4xMiAxbDguMDUtOS4xMkE4LjI1MSA4LjI1MSAwIDEgMCAxNS4yNS4wMXptMCAxNWE2Ljc1IDYuNzUgMCAxIDEgMC0xMy41YTYuNzUgNi43NSAwIDAgMSAwIDEzLjUiLz48L3N2Zz4=") no-repeat;
+  background-size: 15px 15px;
+  transform: scaleX(-1);
+  width: 15px;
+  height: 15px;
+}
+
+#searchArea{
+  height: 100%;
+  width:100%;
+  border-radius: 10px 10px 0 0;
+  background-color: transparent;
+  position: relative;
+  color: white;
+  padding-left: 40px;
+  padding-top: 4px;
+}
+
+#searchArea:focus{
+  outline: none;
+}
+
+#clear{
+  width:12px;
+  height: 12px;
+  margin-right:10px;
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  cursor: pointer;
+}
+
+#clear img{
+  width:12px;
+  height: 12px;
+}
+
+#filters{
+  width: 100%;
+  background-color: black;
+  display: flex;
+  padding:10px 0 30px 0;
+}
+
+#filters div{
+  width: 50%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+#favorites{
+  padding-left: 22px;
+}
+
+#favorites:before{
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 61px;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTkuNTk1IDYuMjUyTDggMUw2LjQwNSA2LjI1MkgxbDQuMzczIDMuNEwzLjc1IDE1TDggMTEuNjk1TDEyLjI1IDE1bC0xLjYyMy01LjM0OEwxNSA2LjI1MnoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==") no-repeat;
+  background-size: 15px 15px;
+  width: 20px;
+  height: 20px;
+}
+
+#allCoins{
+  padding-right: 24px;
+}
+
+#coinContainer{
+  display: flex;
+}
+
+#isFav{
+  padding-bottom: 20px;
+}
+
+#isFav img{
+  margin-left: 17px;
+  width: 15px;
+  height: 15px;
+  padding-right: 12px;
+}
+
+#coins{
+  max-height: 320px;
+  color: white;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#coins::-webkit-scrollbar {
+  display: none;
+}
